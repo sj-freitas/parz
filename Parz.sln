@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parz.LambdaExpressions", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parz.Functions", "Parz.Functions\Parz.Functions.csproj", "{C7E65B71-CA5E-47DB-99CC-26C1B3A644B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parz.Strings", "Parz.Strings\Parz.Strings.csproj", "{1E0E41A3-CE78-425C-9C64-65F993B830B3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{C7E65B71-CA5E-47DB-99CC-26C1B3A644B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7E65B71-CA5E-47DB-99CC-26C1B3A644B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7E65B71-CA5E-47DB-99CC-26C1B3A644B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1E0E41A3-CE78-425C-9C64-65F993B830B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E0E41A3-CE78-425C-9C64-65F993B830B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E0E41A3-CE78-425C-9C64-65F993B830B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E0E41A3-CE78-425C-9C64-65F993B830B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

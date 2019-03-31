@@ -7,9 +7,9 @@ using Newtonsoft.Json;
 using Parz.Factories;
 using Parz.Functions.Factories;
 using Parz.Functions.NodeConverters;
-using Parz.LambdaExpressions.NodeConverters;
 using Parz.LambdaExpressions;
 using Parz.LambdaExpressions.Factories;
+using Parz.LambdaExpressions.NodeConverters;
 using Parz.LambdaExpressions.Nodes;
 using Parz.NodeConverters;
 using Parz.Nodes;
@@ -51,17 +51,12 @@ namespace Parz.Tests
         }
     }
 
+    /// <summary>
+    /// These tests are a work in progress, there are no propper assertions or names
+    /// yet.
+    /// </summary>
     public class UnitTest1
     {
-        [Fact]
-        public void Test1()
-        {
-            var tokens = "+/*".Split();
-            var result = "1 + 3 / 5 +(52/3)+56 * min(4,6,7)".SplitTokens(tokens).ToArray();
-
-            Console.WriteLine(string.Join(Environment.NewLine, result));
-        }
-
         private static IDictionary<string, int> Operators = new Dictionary<string, int>
         {
             { "+", 0 },
@@ -72,7 +67,7 @@ namespace Parz.Tests
         };
 
         [Fact]
-        public void Test2()
+        public void EvaluateComputesTheValue()
         {
             var parser = new ParzEngine(
                 toLevelTokens: tokens => tokens
@@ -104,10 +99,12 @@ namespace Parz.Tests
 
             var result = parser.Parse(expression);
             var decimalResult = Evaluate(result);
+
+            Assert.Equal(183.93333333333333333333333333m, decimalResult);
         }
 
         [Fact]
-        public void Test3()
+        public void TreeifyTransformsTheExpressionToATree()
         {
             var operators = Operators.Keys;
             var factory = new AggregateTokenFactory(
@@ -132,7 +129,7 @@ namespace Parz.Tests
             var result = tokens
                 .Treeify(nodeConverter);
 
-            Console.WriteLine(result);
+            Assert.Equal("(((2 + 2) * 2) + rui)", result.ToString());
         }
 
         [Fact]
